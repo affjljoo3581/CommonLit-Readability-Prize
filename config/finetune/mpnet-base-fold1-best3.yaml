@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 1
+  random_seed: 42
+model:
+  name: microsoft/mpnet-base
+  max_seq_len: 256
+  num_reinit_layers: 3
+  classifier_dropout: 0.09236945126830323
+  random_seed: 32
+optim:
+  learning_rate: 9.070086335603423e-05
+  layerwise_lr_decay: 0.9527242812933868
+  weight_decay: 0.1210942785467584
+  max_grad_norm: 0
+train:
+  epochs: 5
+  warmup_ratio: 0.0014617147475105702
+  batch_size: 16
+  accumulate_grads: 1
+  validation_ratio: 0.25

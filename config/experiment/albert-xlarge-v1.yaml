@@ -1,0 +1,42 @@
+run:
+  experiments:
+    - method:
+        type: tpe
+        n_startup_trials: 15
+        multivariate: true
+        group: true
+        constant_liar: true
+      early_stop:
+        type: median
+        n_startup_trials: 15
+        n_warmup_steps: 3
+        interval_steps: 4
+      num_trials: 60
+    - method: grid
+
+  config:
+    data:
+      path: commonlit-readability-prize/train.csv
+      num_folds: 4
+      fold_index: 0
+      random_seed: 42
+
+    model:
+      name: albert-xlarge-v1
+      max_seq_len: 256
+      num_reinit_layers: 0
+      classifier_dropout: $0:(0, 0.5)
+      random_seed: $1:(0, 39)
+
+    optim:
+      learning_rate: $0:(5e-6, 5e-5)
+      layerwise_lr_decay: 1.0
+      weight_decay: $0:(0, 0.2)
+      max_grad_norm: $0:[0, 1.0]
+
+    train:
+      epochs: 5
+      warmup_ratio: $0:(0, 0.2)
+      batch_size: 8
+      accumulate_grads: $0:[1, 2, 4]
+      validation_ratio: 0.25

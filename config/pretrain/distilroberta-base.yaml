@@ -1,0 +1,16 @@
+data:
+  path: commonlit-readability-prize/train.csv
+
+model:
+  name: distilroberta-base
+  max_seq_len: 256
+
+optim:
+  learning_rate: 5.e-5
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+
+train:
+  epochs: 5
+  warmup_ratio: 0.1
+  batch_size: 16

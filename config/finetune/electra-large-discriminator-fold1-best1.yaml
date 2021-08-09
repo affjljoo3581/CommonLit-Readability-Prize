@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 1
+  random_seed: 42
+model:
+  name: google/electra-large-discriminator
+  max_seq_len: 256
+  num_reinit_layers: 2
+  classifier_dropout: 0.1209879297771774
+  random_seed: 18
+optim:
+  learning_rate: 5.7430326620918426e-05
+  layerwise_lr_decay: 0.9874904409384531
+  weight_decay: 0.1455286868246164
+  max_grad_norm: 1.0
+train:
+  epochs: 5
+  warmup_ratio: 0.07037366553792607
+  batch_size: 16
+  accumulate_grads: 2
+  validation_ratio: 0.25

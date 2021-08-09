@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 0
+  random_seed: 42
+model:
+  name: facebook/muppet-roberta-large
+  max_seq_len: 256
+  num_reinit_layers: 6
+  classifier_dropout: 0.2729115804144877
+  random_seed: 13
+optim:
+  learning_rate: 8.510061747313943e-05
+  layerwise_lr_decay: 0.9111397512686809
+  weight_decay: 0.05979606647505188
+  max_grad_norm: 0.0
+train:
+  epochs: 5
+  warmup_ratio: 0.03598914026749098
+  batch_size: 16
+  accumulate_grads: 1
+  validation_ratio: 0.25

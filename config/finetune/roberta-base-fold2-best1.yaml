@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 2
+  random_seed: 42
+model:
+  name: roberta-base
+  max_seq_len: 256
+  num_reinit_layers: 1
+  classifier_dropout: 0.22811414433774924
+  random_seed: 13
+optim:
+  learning_rate: 6.551807609810102e-05
+  layerwise_lr_decay: 0.8156710499046678
+  weight_decay: 0.03439421630102206
+  max_grad_norm: 0
+train:
+  epochs: 5
+  warmup_ratio: 0.0067669615924280824
+  batch_size: 16
+  accumulate_grads: 1
+  validation_ratio: 0.25

@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 2
+  random_seed: 42
+model:
+  name: microsoft/deberta-base
+  max_seq_len: 256
+  num_reinit_layers: 4
+  classifier_dropout: 0.10332649618840614
+  random_seed: 4
+optim:
+  learning_rate: 5.193304220223008e-05
+  layerwise_lr_decay: 0.8864286115787194
+  weight_decay: 0.18842202668753352
+  max_grad_norm: 0
+train:
+  epochs: 5
+  warmup_ratio: 0.025159014072325576
+  batch_size: 16
+  accumulate_grads: 1
+  validation_ratio: 0.25

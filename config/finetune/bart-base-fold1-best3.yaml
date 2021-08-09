@@ -1,0 +1,22 @@
+data:
+  path: commonlit-readability-prize/train.csv
+  num_folds: 4
+  fold_index: 1
+  random_seed: 42
+model:
+  name: facebook/bart-base
+  max_seq_len: 256
+  num_reinit_layers: 1
+  classifier_dropout: 0.053954673026753414
+  random_seed: 38
+optim:
+  learning_rate: 9.610809245184766e-05
+  layerwise_lr_decay: 0.9053662713056393
+  weight_decay: 0.09504204224966203
+  max_grad_norm: 0
+train:
+  epochs: 5
+  warmup_ratio: 0.09051170850146573
+  batch_size: 16
+  accumulate_grads: 1
+  validation_ratio: 0.25
